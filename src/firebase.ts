@@ -1,11 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyCA7JXZKo2sUvj4hHbhvfCKTg0DbdDlWME',
   authDomain: 'chatapplication-fedea.firebaseapp.com',
@@ -17,5 +14,21 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig); // инициализация сервера с регистрацией своего ключа
+const analytics = getAnalytics(app); // хз
+
+export async function authGoogle() {
+  try {
+    const provider = new GoogleAuthProvider(); // Генерирует учетную запись Google
+    const auth = getAuth(); // Возвращает экземпляр Firebase Authentication
+
+    const { user } = await signInWithPopup(auth, provider); // Передаем эти 2 объекта в signInWithPopup который обрабатывает поток входа и возвращает информацию об аутентифицироанном пользователе после его аутентификации.
+    return { uid: user.uid, displayName: user.displayName };
+  } catch (err: any) {
+    if (err.code !== 'auth/cancelled-popup-request') {
+      console.error(err);
+    }
+
+    return null;
+  }
+}
