@@ -1,13 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { AiOutlineVideoCamera } from 'react-icons/ai';
+import { FiUserPlus } from 'react-icons/fi';
+import { RiMoreFill } from 'react-icons/ri';
 
-type Props = {}
+import Messages from './Messages'
+
+type Props = {};
 
 const Chat = (props: Props) => {
   return (
-    <div className=''>Chat
-      <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam laborum aspernatur earum totam, accusantium, hic odit optio praesentium aliquam veritatis asperiores harum! Incidunt placeat labore temporibus minus porro illum!</div>
+    <div className="bg-chat-bg">
+      <div className="flex justify-between items-center p-4 bg-chat-header">
+        <span className='font-medium'>Женя</span>
+        <div className="flex gap-5 text-2xl ">
+          <AiOutlineVideoCamera className="cursor-pointer hover:text-green-400" />
+          <FiUserPlus className="cursor-pointer hover:text-green-400" />
+          <RiMoreFill className="cursor-pointer hover:text-green-400" />
+        </div>
+      </div>
+      Chat
+      <div className="">
+        <Messages/>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Chat
+export default Chat;

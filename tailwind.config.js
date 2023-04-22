@@ -11,6 +11,8 @@ export default {
         'sidebar-bg': '#221831',
         'navbar-bg': '#703b94',
         'search-bg': '#09092d',
+        'chat-bg': '#4d3f72',
+        'chat-header': '#302968',
       },
       backgroundImage: (theme) => ({
         gradient: 'linear-gradient(90deg, #7773c6, #9d6cc0, #bd64b2)',
