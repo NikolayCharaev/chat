@@ -8,6 +8,9 @@ export default {
         'black-blue': '#ed5761',
         'button-hover': '#39b8c2',
         'bg-card': '#be74be',
+        'sidebar-bg': '#221831',
+        'navbar-bg': '#703b94',
+        'search-bg': '#09092d',
       },
       backgroundImage: (theme) => ({
         gradient: 'linear-gradient(90deg, #7773c6, #9d6cc0, #bd64b2)',
