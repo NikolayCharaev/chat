@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app bg-gradient text-white">
       <div className='flex justify-center items-center h-screen'>
         <BrowserRouter>
           <Routes>

@@ -4,7 +4,7 @@ import { TbComet } from 'react-icons/tb';
 
 const Auth = () => {
   return (
-    <div className="w-2/5 bg-black-grey p-10 rounded ">
+    <div className="w-2/5 bg-bg-card p-10 rounded ">
         <div className="flex gap-6 justify-center items-center">
       <TbComet />
       <h1 className="text-center text-4xl font-medium ">Войти в аккаунт</h1>
@@ -22,7 +22,7 @@ const Auth = () => {
       <div className="flex justify-end">
         <p>
           У вас нет аккаунта?{' '}
-          <Link className="text-blue-500" to="/chat/register">
+          <Link className="text-green-500" to="/chat/register">
             Зарегистрироваться
           </Link>
         </p>

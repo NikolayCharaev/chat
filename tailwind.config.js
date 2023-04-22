@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: { 
-        "black-grey" : "#022027",
-        "black-blue" : "#1D1E33",
-        "button-hover" : "#002137"
-      }
+      colors: {
+        'black-grey': '#022027',
+        'black-blue': '#ed5761',
+        'button-hover': '#39b8c2',
+        'bg-card': '#be74be',
+      },
+      backgroundImage: (theme) => ({
+        gradient: 'linear-gradient(90deg, #7773c6, #9d6cc0, #bd64b2)',
+      }),
     },
   },
   plugins: [],
-}
+};

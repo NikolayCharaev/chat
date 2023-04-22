@@ -12,7 +12,7 @@ const Register = () => {
 
   const chatIcon = <BsChatLeftDots className="text-5xl text-blue-400" />;
   return (
-    <div className="w-2/5 bg-black-grey p-10 rounded text-white ">
+    <div className="w-2/5 bg-bg-card p-10 rounded text-white ">
       <div className="flex items-center justify-center gap-6">
         <BsChatLeftDots />
         <h1 className="text-center text-4xl font-medium ">Регистрация</h1>
@@ -38,7 +38,7 @@ const Register = () => {
       <div className="flex justify-end">
         <p>
           Уже есть аккаунт?{' '}
-          <Link className="text-blue-500" to="/chat/auth">
+          <Link className="text-green-500" to="/chat/auth">
             войти
           </Link>
         </p>
