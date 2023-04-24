@@ -1,17 +1,23 @@
 import React from 'react';
 import { BsImages, BsChatLeftDots } from 'react-icons/bs';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-  const { register, handleSubmit } = useForm();
-
   interface FormData {
     username: string;
     email: string;
     password: string;
   }
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<FormData>();
+
+  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
 
   return (
     <div className="w-2/5 bg-bg-card p-10 rounded text-white ">
@@ -21,10 +27,40 @@ const Register = () => {
         <BsChatLeftDots />
       </div>
 
-      <form action="" className="flex flex-col items-start gap-3 mb-8 mt-[50px]">
-        <input className="w-full p-3 rounded text-black" type="text" placeholder="имя в чате" />
-        <input className="w-full p-3 rounded text-black" type="email" placeholder="почта" />
-        <input className="w-full p-3 rounded text-black" type="password" placeholder="пароль" />
+      <form
+        action=""
+        className="flex flex-col items-start gap-3 mb-8 mt-[50px]"
+        onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className="w-full p-3 rounded text-black"
+          type="text"
+          placeholder="имя в чате"
+          {...register('username', { required: true })}
+        />
+        <p className={`mt-1 text-green-500 font-bold bg-black-grey p-2 rounded ${errors.username ? '' : 'hidden'}`}>
+          {errors.username && 'Это поле обязательно для заполнения'}
+        </p>
+        <input
+          className="w-full p-3 rounded text-black"
+          type="email"
+          placeholder="почта"
+          {...register('email', {
+            required: true,
+            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          })}
+        />
+        <p className={`mt-1 text-green-500 font-bold bg-black-grey p-2 rounded ${errors.email ? '' : 'hidden'}`}>
+          {errors.email && 'Введите корректный адрес электронной почты'}
+        </p>
+        <input
+          className="w-full p-3 rounded text-black"
+          type="password"
+          placeholder="пароль"
+          {...register('password', { required: true })}
+        />
+        <p className={`mt-1 text-green-500 font-bold bg-black-grey p-2 rounded ${errors.password ? '' : 'hidden'}`}>
+          {errors.password && 'Введите пароль'}
+        </p>
 
         <input className="hidden" type="file" id="file" />
         <label htmlFor="file">
