@@ -19,7 +19,7 @@ const Search = (props: Props) => {
             className="w-12 h-12 rounded-full bg-slate-500 object-cover"
           />
           <div>
-            <span>Женя</span>
+            <span>Коля</span>
           </div>
         </div>
       </div>

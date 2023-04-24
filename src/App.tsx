@@ -12,8 +12,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/chat" element={<Home />} />
-             {/* <Route path="/chat/register" element={<Register />} /> */}
-            {/* <Route path="/chat/auth" element={<Auth />} />  */}
+             <Route path="/chat/register" element={<Register />} />
+            <Route path="/chat/auth" element={<Auth />} /> 
           </Routes>
         </BrowserRouter>
       </div>

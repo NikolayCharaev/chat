@@ -11,8 +11,8 @@ const Auth = () => {
       <TbComet />
       </div>
       <form action="" className="flex flex-col items-start gap-3 mb-8 mt-[50px]">
-        <input className="w-full p-3 rounded " type="text" placeholder="введите логин" />
-        <input className="w-full p-3 rounded " type="password" placeholder="введите пароль" />
+        <input className="w-full p-3 rounded text-black" type="text" placeholder="введите логин" />
+        <input className="w-full p-3 rounded text-black" type="password" placeholder="введите пароль" />
         <button
           type="submit"
           className="bg-black-blue p-5 rounded  transition hover:bg-button-hover">
